@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Loan Application</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+      }
+
+      .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2 class="text-center">Home Loan Application</h2>
+      <form id="homeLoanForm" novalidate>
+        <!-- Personal Details -->
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="Enter your first name"
+            required
+          />
+          <div class="invalid-feedback">Please enter your first name.</div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Enter your last name"
+            required
+          />
+          <div class="invalid-feedback">Please enter your last name.</div>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" class="form-control" id="dob" required />
+          <div class="invalid-feedback">Please enter your date of birth.</div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+          <div class="invalid-feedback">Please enter your phone number.</div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            placeholder="Enter your address"
+            required
+          />
+          <div class="invalid-feedback">Please enter your address.</div>
+        </div>
+
+        <!-- Loan Details -->
+        <div class="form-group">
+          <label for="loanAmount">Loan Amount</label>
+          <input
+            type="number"
+            class="form-control"
+            id="loanAmount"
+            placeholder="Enter desired loan amount"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter the desired loan amount.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loanTerm">Loan Term (years)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="loanTerm"
+            placeholder="Enter loan term in years"
+            required
+          />
+          <div class="invalid-feedback">Please enter the loan term.</div>
+        </div>
+        <div class="form-group">
+          <label for="income">Annual Income</label>
+          <input
+            type="number"
+            class="form-control"
+            id="income"
+            placeholder="Enter your annual income"
+            required
+          />
+          <div class="invalid-feedback">Please enter your annual income.</div>
+        </div>
+
+        <!-- Property Details -->
+        <div class="form-group">
+          <label for="propertyAddress">Property Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="propertyAddress"
+            placeholder="Enter the property address"
+            required
+          />
+          <div class="invalid-feedback">Please enter the property address.</div>
+        </div>
+        <div class="form-group">
+          <label for="propertyValue">Property Value</label>
+          <input
+            type="number"
+            class="form-control"
+            id="propertyValue"
+            placeholder="Enter the property value"
+            required
+          />
+          <div class="invalid-feedback">Please enter the property value.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Submit Application
+        </button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      (function () {
+        "use strict";
+        window.addEventListener(
+          "load",
+          function () {
+            var form = document.getElementById("homeLoanForm");
+            form.addEventListener(
+              "submit",
+              function (event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+              },
+              false
+            );
+          },
+          false
+        );
+      })();
+    </script>
+  </body>
+</html>
